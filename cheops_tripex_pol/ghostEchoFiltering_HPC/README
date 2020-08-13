@@ -1,0 +1,8 @@
+This folder was used to reprocess the triple frequency dataset from the tripex-pol campaign. 
+The main skript that does all the work is ghostEchoFilteringLeonie.py. In order to run it on cheops you have to use the bash scripts batch_process_day.sh and batch_send_days.sh
+
+The chain of reprocessing is:
+
+1) regrid everything to a common grid (the skripts that are doing that are regridGhostecho.py and readData.py) 
+2) remove the GhostEchos (needed here is createEmptyDataset.py, regridGhostecho.py, process.py, processX.py, kaLib.py). The ghostEchos are removed by getting the fastest and slowest edge of the Ka-Spectrum and cutting the W-Band spectrum at those velocities. For consitency: the X-Band spectra are also cut there
+3) calculate the moments from the new spectra (needed here is moments.py)

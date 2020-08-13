@@ -1,0 +1,7 @@
+now the two scripts change{..}.py came into play after I had already reprocessed the LV0 data. 
+The problem is that the original w-band data has the H and V channel names switched up. 
+In order to not having to reprocess everything, I just quickly wrote these skripts to just 
+change the names of the variables, so that H and V are assigned to the correct channels.
+
+The folder ghostEchoFiltering_HPC is directly copied from cheops to here, so those are the 
+routines that are running on cheops and are used to reprocess the LV0 files and calculate the LV1 moments.
