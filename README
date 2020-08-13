@@ -1,0 +1,9 @@
+This folder is used to reprocess and plot the datasets from the tripex-pol campaing.
+
+The cheops_tripex_pol folder contains all the scripts used to generate the LV0 and LV1 files saved in /data/obs/campaigns/tripex-pol/processed/
+
+The tripexProcessing folder is used to generate the LV2 files, the codes are the same that were used to reprocess the tripex dataset (this is why it is still calles tripexProcessing) and was provided by Jose (I only made a few adjustments, mainly adding variables that are saved in the LV2 files)
+
+The reproPol folder contains the scripts that are sofar used to reprocess the polarimetric dataset. {Missing: regridding KDP calculated from Alexander}
+
+The plotting folder contains all plotting routines and most plots 
