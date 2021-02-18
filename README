@@ -4,6 +4,7 @@ The cheops_tripex_pol folder contains all the scripts used to generate the LV0 a
 
 The tripexProcessing folder is used to generate the LV2 files, the codes are the same that were used to reprocess the tripex dataset 
 (this is why it is still calles tripexProcessing) and was provided by Jose (I only made a few adjustments, mainly adding variables that are saved in the LV2 files)
+the LV2 processing adds attenuation correction to the LV1 data. The main skript that controls that is tripexL2CtrlMultFile.sh and tripexL2Samd.py. 
 
 The reproPol folder contains the scripts that are sofar used to reprocess the polarimetric dataset. {Missing: regridding KDP calculated from Alexander}
 
