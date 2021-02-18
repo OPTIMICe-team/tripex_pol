@@ -61,7 +61,7 @@ def getResampledTimeRange(rangeRef, rangeTolerance, timeRef,
     usedIndexRange = np.ones(len(rangeRef))*np.nan
     timeConv = convCloudTime2HumTime(time)
     humanTime = pd.datetime(year, month, day) + pd.to_timedelta(np.array(timeConv), unit='s')
-
+    #humanTime=time
     #Remove duplicates
     varData = pd.DataFrame()
     varDataTemp = pd.DataFrame(index=humanTime, columns=height_M, data=dataToResample)
@@ -94,7 +94,8 @@ def getResampledTimeRange(rangeRef, rangeTolerance, timeRef,
 
 
 def getInterpData(time, timeRef, height_M,
-                  resampledData, dataToInterp,
+                  resampledData, 
+                  dataToInterp,
                   rangeRef):
     
     funcToInterp2d = interpolate.interp2d(time, height_M, dataToInterp.T)
@@ -132,7 +133,7 @@ def getDescriptor():
 def getAtmAttPantra(cloudNetFilePath, radarFreqs):
 
     cloudNetData = netCDF4.Dataset(cloudNetFilePath,'r')
-    height_M = cloudNetData['model_height'][:]#[m]
+    height_M = cloudNetData['model_height'][:]-105# added -105[m] here to Joses original file since the cloudnet mocel_height start at msl and radar data is at 105 above msl
     temp = cloudNetData['temperature'][:]#[k]
     speHum = cloudNetData['specific_humidity'][:]#[kg/kg]
     press = cloudNetData['pressure'][:]#[Pa]
